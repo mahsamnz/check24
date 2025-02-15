@@ -1,0 +1,26 @@
+# CHECK24 Car Insurance Provider Integration
+
+This project demonstrates integration with car insurance providers, showcasing clean architecture and test-driven development practices.
+
+## Prerequisites
+
+- Go 1.20 or higher ([Installation Guide](https://go.dev/doc/install))
+
+## Getting Started
+
+### Running the Application
+
+To run the application with defaults:
+```bash
+make run 
+```
+
+To run the application with a specific input file and provider:
+```bash
+make run INPUT_FILE_PATH=./data/request.json PROVIDER=ACME
+```
+## running tests
+
+```bash
+make test 
+```
