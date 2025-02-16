@@ -25,6 +25,5 @@ type Datos struct {
 }
 
 type TarificacionThirdPartyRequest struct {
-	Cotizacion float64 `json:"Cotizacion"`
-	Datos      Datos   `json:"Datos"`
+	Datos Datos `json:"Datos"`
 }

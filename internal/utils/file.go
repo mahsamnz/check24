@@ -22,3 +22,21 @@ func ReadJSONFile(filename string) ([]byte, error) {
 
 	return fileContent, nil
 }
+
+func CreateFile(filename string, extention string) (*os.File, error) {
+	// Check if file exists
+	if _, err := os.Stat(filename); os.IsNotExist(err) {
+
+		file, err := os.Create(fmt.Sprintf("%s.%s", filename, extention))
+		if err != nil {
+			return nil, fmt.Errorf("failed to create file: %w", err)
+		}
+		return file, nil
+	}
+	// Open existing file
+	file, err := os.OpenFile(filename, os.O_RDWR, 0644)
+	if err != nil {
+		return nil, fmt.Errorf("failed to open file: %w", err)
+	}
+	return file, nil
+}

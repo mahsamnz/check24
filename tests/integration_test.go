@@ -33,12 +33,8 @@ func TestMainFlow(t *testing.T) {
 	provider, err := factory.GetProvider("ACME")
 	assert.NoError(t, err)
 
-	// Map data
-	err = provider.MapData(input)
-	assert.NoError(t, err)
-
 	// Serialize data
-	xmlData, err := provider.SerializeData()
+	xmlData, err := provider.SerializeData(input)
 	assert.NoError(t, err)
 	assert.Contains(t, string(xmlData), "<CondPpalEsTomador>S</CondPpalEsTomador>")
 	assert.Contains(t, string(xmlData), "<ConductorUnico>S</ConductorUnico>")
